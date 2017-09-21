@@ -1,0 +1,7 @@
+create 'apache_access_log',
+{ NAME => 'time', VERSIONS => 100 },
+{ NAME => 'client', VERSIONS => 100 },
+{ NAME => 'server', VERSIONS => 100 },
+{ NAME => 'request', VERSIONS => 100 },
+{ NAME => 'response', VERSIONS => 100 }
+exit

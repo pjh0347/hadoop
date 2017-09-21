@@ -1,0 +1,3 @@
+disable 'apache_access_log'
+drop 'apache_access_log'
+exit

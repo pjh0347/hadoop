@@ -1,0 +1,1 @@
+hbase shell drop_table.txt

@@ -1,0 +1,1 @@
+hbase shell -n create_table.txt
