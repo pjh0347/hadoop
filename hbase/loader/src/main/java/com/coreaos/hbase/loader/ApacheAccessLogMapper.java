@@ -1,7 +1,6 @@
 package com.coreaos.hbase.loader;
 
 import java.io.IOException;
-import java.time.Instant;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
