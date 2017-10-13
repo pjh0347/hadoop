@@ -146,22 +146,28 @@ df.groupBy(['method', df.status]).count().show()
 # query
 ###########################################################
 print "total pv"
-df.count()
+print df.count()
+spark.sql("select count(1) from apache_access_log_table").show()
 
 print "daily pv"
 df.groupBy('date').count().sort('date').show()
+spark.sql("select date, count(1) from apache_access_log_table group by date order by date").show()
 
 print "daily status count"
 df.groupBy('date', 'status').count().sort('date', 'status').show()
+spark.sql("select date, status, count(1) from apache_access_log_table group by date, status order by date, status").show()
 
 print "daily uv"
 df.agg(F.countDistinct('date', 'host')).show()
+spark.sql("select date, count(distinct host) from apache_access_log_table group by date order by date").show()
 
 print "daily uv (between 20151201 ~ 20151231)"
 df.filter(df.date.between('20151201', '20151231')).agg(F.countDistinct('date', 'host').alias('uv')).sort('uv').show()
+spark.sql("select date, count(distinct host) from apache_access_log_table where date between '20151201' and '20151231' group by date order by date").show()
 
 print "daily 404 status count"
 df.filter(df.status == '404').groupBy('date').count().sort('date').show()
+spark.sql("select date, count(1) from apache_access_log_table where status = '404' group by date order by date").show()
 
 ###########################################################
 # UDF
