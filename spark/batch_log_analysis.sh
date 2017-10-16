@@ -4,5 +4,5 @@ $SPARK_HOME/bin/spark-submit \
     --deploy-mode client \
     --conf "spark.executor.memory=1g" \
     --py-files apache_access_log.py \
-    spark_batch_analysis.py \
+    spark_batch_analysis.py
 

@@ -5,5 +5,5 @@ $SPARK_HOME/bin/spark-submit \
     --conf "spark.executor.memory=1g" \
     --conf "spark.driver.memory=1g" \
     --py-files apache_access_log.py \
-    spark_stream_analysis.py \
+    spark_stream_analysis.py
 
